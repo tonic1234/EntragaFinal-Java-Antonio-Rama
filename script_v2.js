@@ -1447,25 +1447,25 @@ function recolectorRecolect() {
 //Pantalla de carga
 
 
-// setTimeout(function () {
-//     document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielodiabg.png)"
-// }, 2500);
+setTimeout(function () {
+    document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielodiabg.png)"
+}, 2500);
 
-// setTimeout(function () {
-//     document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielotardebg.png)"
-// }, 3500);
+setTimeout(function () {
+    document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielotardebg.png)"
+}, 3500);
 
-// setTimeout(function () {
-//     document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielonochebg.png)"
-// }, 4500);
+setTimeout(function () {
+    document.querySelector(".loadScreen").style.backgroundImage = "url(../imagenes/cielonochebg.png)"
+}, 4500);
 
-// setTimeout(function () {
-//     document.querySelector(".loadScreen").style.opacity = "0"
-// }, 7500);
+setTimeout(function () {
+    document.querySelector(".loadScreen").style.opacity = "0"
+}, 7500);
 
-// setTimeout(function () {
-//     document.querySelector(".loadScreen").style.display = "none"
-// }, 10000);
+setTimeout(function () {
+    document.querySelector(".loadScreen").style.display = "none"
+}, 10000);
 
 //Botones de la interfaz
 
@@ -1497,36 +1497,12 @@ playB.addEventListener('click', function () {
 clima = Math.ceil(Math.random() * 10);
 
 
-// let data = [{
-//     "Nombre": "Antonio",
-//     "Tiempo": 33
-// }, {
-//     "Nombre": "Antonio",
-//     "Tiempo": 33
-// }, {
-//     "Nombre": "Antonio",
-//     "Tiempo": 33
-// }, {
-//     "Nombre": "Antonio",
-//     "Tiempo": 33
-// }]
 
-
-// console.log(data)
-
-// message(data[1].Nombre)
-
-
-
-
-
-
-
-// message(`Te despiertas en un bosque junto a una carpa, tienes un gran
-// dolor de cabeza y no recuerdas nada, absolutamente nada.
-// En el suelo, a pocos metros de ti, hay una mochila. La agarras,
-// tiene una botella vacía, algunas hojas con instrucciones para fabricar
-// elementos de supervivencia y un reloj que funciona pero tiene la correa rota.`)
+message(`Te despiertas en un bosque junto a una carpa, tienes un gran
+dolor de cabeza y no recuerdas nada, absolutamente nada.
+En el suelo, a pocos metros de ti, hay una mochila. La agarras,
+tiene una botella vacía, algunas hojas con instrucciones para fabricar
+elementos de supervivencia y un reloj que funciona pero tiene la correa rota.`)
 
 gameProgress();
 
