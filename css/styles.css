@@ -1,0 +1,1204 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,600;0,700;0,800;1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../imagenes/cielodiabg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Urbanist", sans-serif;
+  transition: all 5s;
+}
+body .audio {
+  display: none;
+}
+body .muteIcon {
+  position: absolute;
+  width: 40px;
+  bottom: 30px;
+  right: 30px;
+  z-index: 3;
+  cursor: pointer;
+}
+body .unMuteIcon {
+  position: absolute;
+  width: 40px;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+@keyframes introAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body .loadScreen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: all 1s;
+  background-color: #111313;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 20;
+}
+body .loadScreen div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .loadScreen .load {
+  width: 150px;
+}
+body .loadScreen h2 {
+  color: white;
+  font-size: 52pt;
+  text-align: center;
+}
+body .eatBox {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  width: 450px;
+  height: 280px;
+  border-radius: 20px;
+  padding: 5px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.5s;
+  z-index: 8;
+}
+body .eatBox .topBox {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+body .eatBox .topBox .screenTitle {
+  font-weight: 600;
+  font-size: 15pt;
+  color: #363636;
+  margin-top: 4px;
+}
+body .eatBox .topBox img {
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+body .eatBox .foodBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+body .eatBox .foodBox .boxFood_1,
+body .eatBox .foodBox .boxFood_2,
+body .eatBox .foodBox .boxFood_3,
+body .eatBox .foodBox .boxFood_4,
+body .eatBox .foodBox .boxFood_5,
+body .eatBox .foodBox .boxFood_6,
+body .eatBox .foodBox .boxFood_7,
+body .eatBox .foodBox .boxFood_8 {
+  display: flex;
+}
+body .eatBox .foodBox .boxFood_1 .cookIcon_1,
+body .eatBox .foodBox .boxFood_1 .cookIcon_2,
+body .eatBox .foodBox .boxFood_1 .cookIcon_3,
+body .eatBox .foodBox .boxFood_1 .cookIcon_4,
+body .eatBox .foodBox .boxFood_1 .cookIcon_5,
+body .eatBox .foodBox .boxFood_1 .cookIcon_6,
+body .eatBox .foodBox .boxFood_1 .cookIcon_7,
+body .eatBox .foodBox .boxFood_1 .cookIcon_8,
+body .eatBox .foodBox .boxFood_2 .cookIcon_1,
+body .eatBox .foodBox .boxFood_2 .cookIcon_2,
+body .eatBox .foodBox .boxFood_2 .cookIcon_3,
+body .eatBox .foodBox .boxFood_2 .cookIcon_4,
+body .eatBox .foodBox .boxFood_2 .cookIcon_5,
+body .eatBox .foodBox .boxFood_2 .cookIcon_6,
+body .eatBox .foodBox .boxFood_2 .cookIcon_7,
+body .eatBox .foodBox .boxFood_2 .cookIcon_8,
+body .eatBox .foodBox .boxFood_3 .cookIcon_1,
+body .eatBox .foodBox .boxFood_3 .cookIcon_2,
+body .eatBox .foodBox .boxFood_3 .cookIcon_3,
+body .eatBox .foodBox .boxFood_3 .cookIcon_4,
+body .eatBox .foodBox .boxFood_3 .cookIcon_5,
+body .eatBox .foodBox .boxFood_3 .cookIcon_6,
+body .eatBox .foodBox .boxFood_3 .cookIcon_7,
+body .eatBox .foodBox .boxFood_3 .cookIcon_8,
+body .eatBox .foodBox .boxFood_4 .cookIcon_1,
+body .eatBox .foodBox .boxFood_4 .cookIcon_2,
+body .eatBox .foodBox .boxFood_4 .cookIcon_3,
+body .eatBox .foodBox .boxFood_4 .cookIcon_4,
+body .eatBox .foodBox .boxFood_4 .cookIcon_5,
+body .eatBox .foodBox .boxFood_4 .cookIcon_6,
+body .eatBox .foodBox .boxFood_4 .cookIcon_7,
+body .eatBox .foodBox .boxFood_4 .cookIcon_8,
+body .eatBox .foodBox .boxFood_5 .cookIcon_1,
+body .eatBox .foodBox .boxFood_5 .cookIcon_2,
+body .eatBox .foodBox .boxFood_5 .cookIcon_3,
+body .eatBox .foodBox .boxFood_5 .cookIcon_4,
+body .eatBox .foodBox .boxFood_5 .cookIcon_5,
+body .eatBox .foodBox .boxFood_5 .cookIcon_6,
+body .eatBox .foodBox .boxFood_5 .cookIcon_7,
+body .eatBox .foodBox .boxFood_5 .cookIcon_8,
+body .eatBox .foodBox .boxFood_6 .cookIcon_1,
+body .eatBox .foodBox .boxFood_6 .cookIcon_2,
+body .eatBox .foodBox .boxFood_6 .cookIcon_3,
+body .eatBox .foodBox .boxFood_6 .cookIcon_4,
+body .eatBox .foodBox .boxFood_6 .cookIcon_5,
+body .eatBox .foodBox .boxFood_6 .cookIcon_6,
+body .eatBox .foodBox .boxFood_6 .cookIcon_7,
+body .eatBox .foodBox .boxFood_6 .cookIcon_8,
+body .eatBox .foodBox .boxFood_7 .cookIcon_1,
+body .eatBox .foodBox .boxFood_7 .cookIcon_2,
+body .eatBox .foodBox .boxFood_7 .cookIcon_3,
+body .eatBox .foodBox .boxFood_7 .cookIcon_4,
+body .eatBox .foodBox .boxFood_7 .cookIcon_5,
+body .eatBox .foodBox .boxFood_7 .cookIcon_6,
+body .eatBox .foodBox .boxFood_7 .cookIcon_7,
+body .eatBox .foodBox .boxFood_7 .cookIcon_8,
+body .eatBox .foodBox .boxFood_8 .cookIcon_1,
+body .eatBox .foodBox .boxFood_8 .cookIcon_2,
+body .eatBox .foodBox .boxFood_8 .cookIcon_3,
+body .eatBox .foodBox .boxFood_8 .cookIcon_4,
+body .eatBox .foodBox .boxFood_8 .cookIcon_5,
+body .eatBox .foodBox .boxFood_8 .cookIcon_6,
+body .eatBox .foodBox .boxFood_8 .cookIcon_7,
+body .eatBox .foodBox .boxFood_8 .cookIcon_8 {
+  display: none;
+  margin-left: 70px;
+  margin-top: 8px;
+  position: absolute;
+  width: 25px;
+  cursor: pointer;
+  transition: all 1s;
+}
+body .eatBox .foodBox .boxFood_1 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_1 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_2 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_3 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_4 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_5 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_6 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_7 .cookIcon_8:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_1:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_2:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_3:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_4:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_5:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_6:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_7:hover,
+body .eatBox .foodBox .boxFood_8 .cookIcon_8:hover {
+  transform: scale(1.2);
+}
+body .eatBox .foodBox .food_1,
+body .eatBox .foodBox .food_2,
+body .eatBox .foodBox .food_3,
+body .eatBox .foodBox .food_4,
+body .eatBox .foodBox .food_5,
+body .eatBox .foodBox .food_6,
+body .eatBox .foodBox .food_7,
+body .eatBox .foodBox .food_8 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.203);
+  background-color: rgb(237, 237, 237);
+  border: 1px solid gray;
+  cursor: pointer;
+}
+body .eatBox .foodBox .food_1 img,
+body .eatBox .foodBox .food_2 img,
+body .eatBox .foodBox .food_3 img,
+body .eatBox .foodBox .food_4 img,
+body .eatBox .foodBox .food_5 img,
+body .eatBox .foodBox .food_6 img,
+body .eatBox .foodBox .food_7 img,
+body .eatBox .foodBox .food_8 img {
+  width: 70%;
+}
+body .inventoryBox {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  padding: 5px;
+  border-radius: 20px;
+  width: 620px;
+  height: auto;
+  transition: all 5s;
+  z-index: 7;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.5s;
+}
+body .inventoryBox .topBox {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+}
+body .inventoryBox .topBox .screenTitle {
+  font-weight: 600;
+  font-size: 15pt;
+  color: #363636;
+  margin-top: 4px;
+}
+body .inventoryBox .topBox img {
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+body .inventoryBox .inventorySlotBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 95%;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+body .inventoryBox .inventorySlotBox .discardbox {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 140px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.203);
+  background-color: rgb(237, 237, 237);
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: all 1s;
+}
+body .inventoryBox .inventorySlotBox .discardbox:hover .discartIcon {
+  opacity: 1;
+}
+body .inventoryBox .inventorySlotBox .discardbox .discartIcon {
+  opacity: 0;
+  position: absolute;
+  width: 20px;
+  top: 10px;
+  right: 10px;
+  transition: 1s all;
+}
+body .inventoryBox .inventorySlotBox .discardbox .discartIcon:hover {
+  transform: scale(1.2);
+}
+body .inventoryBox .inventorySlotBox .discardbox img {
+  width: 70px;
+}
+body .loseBox {
+  position: absolute;
+  display: none;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 16;
+  background-color: #111313;
+  transition: 5s all;
+  animation-name: introAnimation;
+  animation-duration: 5s;
+}
+body .loseBox button {
+  background-color: white;
+  color: black;
+  width: 155px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+body .loseBox .bestScores {
+  color: white;
+  font-size: 20pt;
+  font-weight: 600;
+}
+body .loseBox .scoresBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px white;
+  border-radius: 5px;
+  width: 700px;
+  height: 400px;
+}
+body .loseBox .scoresBox .scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+body .loseBox .scoresBox .scores p {
+  color: white;
+  font-size: 18pt;
+  font-weight: 600;
+}
+body .loseBox h2 {
+  color: white;
+  font-size: 52pt;
+}
+body .menuBgOut {
+  opacity: 0;
+}
+body .menuBg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-image: url(../imagenes/main.jpg);
+  background-size: cover;
+  z-index: 10;
+  transition: all 3s;
+}
+body .menuBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 12px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  padding: 5px;
+  border-radius: 20px;
+  width: 390px;
+  height: 200px;
+  transition: all 5s;
+  z-index: 7;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.5s;
+}
+body .menuBox button {
+  background-color: rgb(237, 237, 237);
+  color: black;
+  width: 155px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+body .menuBox .menuText {
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+body .menuBox .nameBox {
+  width: 280px;
+  height: 40px;
+  border-radius: 10px;
+  font-family: "Urbanist", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+}
+body .menuBox .closeDiv {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+body .menuBox .closeDiv img {
+  width: 30px;
+  text-align: right;
+  cursor: pointer;
+}
+body .messageBox {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  padding: 15px;
+  border-radius: 20px;
+  width: 500px;
+  height: auto;
+  transition: all 5s;
+  z-index: 7;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.5s;
+}
+body .messageBox p {
+  width: 90%;
+  font-size: 16pt;
+  font-weight: bold;
+  color: #3F4E4F;
+  margin-bottom: 30px;
+  text-align: center;
+}
+body .messageBox .closeDiv {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+body .messageBox .closeDiv img {
+  width: 25px;
+  text-align: right;
+  cursor: pointer;
+}
+body .recollectBox {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  padding: 5px;
+  border-radius: 20px;
+  width: 650px;
+  height: 280px;
+  transition: all 5s;
+  z-index: 7;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.2s;
+  gap: 5px;
+}
+body .recollectBox .topBox {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+}
+body .recollectBox .topBox .screenTitleCraft {
+  font-weight: 600;
+  font-size: 15pt;
+  color: #363636;
+  margin-top: 4px;
+}
+body .recollectBox .topBox img {
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+body .recollectBox .topBox .closeDiv {
+  display: flex;
+  justify-content: end;
+}
+body .recollectBox .topBox .closeDiv img {
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+body .recollectBox .recollectItems,
+body .recollectBox .craftItems {
+  display: flex;
+  gap: 10px;
+}
+body .recollectBox .recollectItems .discartRecolectIcon,
+body .recollectBox .craftItems .discartRecolectIcon {
+  display: flex;
+  position: absolute;
+  width: 20px;
+  margin-left: 170px;
+  margin-top: 5px;
+}
+body .recollectBox .recollectItems .recollect_1,
+body .recollectBox .recollectItems .recollect_2,
+body .recollectBox .recollectItems .recollect_3,
+body .recollectBox .craftItems .recollect_1,
+body .recollectBox .craftItems .recollect_2,
+body .recollectBox .craftItems .recollect_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.203);
+  background-color: rgb(237, 237, 237);
+  border: 1px solid gray;
+  cursor: pointer;
+}
+body .recollectBox .recollectItems .recollect_1 img,
+body .recollectBox .recollectItems .recollect_2 img,
+body .recollectBox .recollectItems .recollect_3 img,
+body .recollectBox .craftItems .recollect_1 img,
+body .recollectBox .craftItems .recollect_2 img,
+body .recollectBox .craftItems .recollect_3 img {
+  width: 75%;
+  margin-bottom: 5px;
+}
+body .recollectBox .recollectItems .recollect_1 .discartRecolectIcon,
+body .recollectBox .recollectItems .recollect_2 .discartRecolectIcon,
+body .recollectBox .recollectItems .recollect_3 .discartRecolectIcon,
+body .recollectBox .craftItems .recollect_1 .discartRecolectIcon,
+body .recollectBox .craftItems .recollect_2 .discartRecolectIcon,
+body .recollectBox .craftItems .recollect_3 .discartRecolectIcon {
+  position: absolute;
+  width: 10px;
+}
+body .craftingBox {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.965);
+  padding: 5px;
+  border-radius: 20px;
+  width: 450px;
+  height: 480px;
+  transition: all 5s;
+  z-index: 7;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.203);
+  border: 1px solid rgb(226, 226, 226);
+  backdrop-filter: blur(1px);
+  animation-name: introAnimation;
+  animation-duration: 0.2s;
+  gap: 5px;
+}
+body .craftingBox .topBox {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  width: 100%;
+}
+body .craftingBox .topBox .screenTitleCraft {
+  font-weight: 600;
+  font-size: 15pt;
+  color: #363636;
+  margin-top: 4px;
+}
+body .craftingBox .topBox img {
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 7px;
+  cursor: pointer;
+}
+body .craftingBox .craftItems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 95%;
+  flex-wrap: wrap;
+}
+body .craftingBox .craftItems .antorchaButton,
+body .craftingBox .craftItems .recolectorButton,
+body .craftingBox .craftItems .fogataButton,
+body .craftingBox .craftItems .trampButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.203);
+  background-color: rgb(237, 237, 237);
+  border: 1px solid gray;
+  cursor: pointer;
+}
+body .craftingBox .craftItems .antorchaButton .craftTitle,
+body .craftingBox .craftItems .recolectorButton .craftTitle,
+body .craftingBox .craftItems .fogataButton .craftTitle,
+body .craftingBox .craftItems .trampButton .craftTitle {
+  font-size: 14pt;
+  font-weight: 600;
+  text-align: center;
+  line-height: 16px;
+}
+body .craftingBox .craftItems .antorchaButton .craftMaterials,
+body .craftingBox .craftItems .recolectorButton .craftMaterials,
+body .craftingBox .craftItems .fogataButton .craftMaterials,
+body .craftingBox .craftItems .trampButton .craftMaterials {
+  font-size: 11pt;
+  font-weight: 500;
+  color: #2e2e2e;
+  text-align: center;
+}
+body .craftingBox .craftItems .antorchaButton .craftDescription,
+body .craftingBox .craftItems .recolectorButton .craftDescription,
+body .craftingBox .craftItems .fogataButton .craftDescription,
+body .craftingBox .craftItems .trampButton .craftDescription {
+  text-align: center;
+}
+body .craftingBox .craftItems .antorchaButton img,
+body .craftingBox .craftItems .recolectorButton img,
+body .craftingBox .craftItems .fogataButton img,
+body .craftingBox .craftItems .trampButton img {
+  width: 45%;
+  margin-bottom: 5px;
+}
+body .craftingBox .craftItems .antorchaButton {
+  opacity: 30%;
+  filter: grayscale(100%);
+}
+body .craftingBox .craftItems .recolectorButton {
+  opacity: 30%;
+  filter: grayscale(100%);
+}
+body .craftingBox .craftItems .fogataButton {
+  opacity: 30%;
+  filter: grayscale(100%);
+}
+body .gameBox {
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 20px;
+  width: 414px;
+  height: 900px;
+  transition: all 4s;
+}
+body .gameBox header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+body .gameBox header .rightMenu {
+  display: flex;
+  gap: 10px;
+}
+body .gameBox header .rightMenu .headerMenuIconBox {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 10px;
+  width: 100%;
+}
+body .gameBox header .rightMenu .headerMenuIconBox img {
+  width: 30px;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox {
+  display: flex;
+  align-items: center;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox .upgradeIconAntorcha {
+  display: none;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox .upgradeIconRecolector {
+  display: none;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox .upgradeIconFogata {
+  display: none;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox .upgradeIconTrampa {
+  display: none;
+  margin-right: 5px;
+}
+body .gameBox header .rightMenu .headerCampUpGradesBox img {
+  width: 30px;
+}
+body .gameBox header .headerClockBox {
+  display: flex;
+  align-items: center;
+  width: 340px;
+  margin-left: 10px;
+}
+body .gameBox header .headerClockBox p {
+  font-weight: bold;
+  font-size: 14pt;
+  line-height: 18px;
+  margin-left: 10px;
+}
+body .gameBox header .headerClockBox img {
+  width: 33px;
+}
+body .campingMask {
+  display: flex;
+  justify-content: center;
+  margin-top: -35px;
+  margin-bottom: 10px;
+  height: 229px;
+  overflow: hidden;
+}
+body .campingMask .campStatusBox {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  margin-bottom: 10px;
+  height: 310px;
+  width: 300px;
+  border-radius: 200px;
+  overflow: hidden;
+}
+body .campingMask .campStatusBox .camping {
+  width: 350px;
+  height: 220px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+  margin-top: 25px;
+  transition: all 3s;
+}
+body .campingMask .campStatusBox .sky {
+  position: absolute;
+  height: 320px;
+  width: 340px;
+  margin-top: -40px;
+  background-image: url(../imagenes/cielodia.png);
+  background-size: contain;
+  background-position: center, top;
+  background-repeat: no-repeat;
+  transition: all 3s;
+}
+@keyframes cloudsAnimations {
+  from {
+    transform: translateX(-700px);
+  }
+  to {
+    transform: translateX(700px);
+  }
+}
+body .campingMask .campStatusBox .campingDia,
+body .campingMask .campStatusBox .campingNoche,
+body .campingMask .campStatusBox .campingTarde {
+  position: absolute;
+  width: 350px;
+  margin-top: 5px;
+  transition: 3s all;
+  z-index: 8;
+}
+body .campingMask .campStatusBox .rainContainer {
+  display: flex;
+  z-index: 20;
+  margin-top: -200px;
+}
+body .campingMask .campStatusBox .rainContainer .rain {
+  position: absolute;
+  width: 300px;
+  margin-top: -30px;
+  filter: brightness(5);
+}
+body .campingMask .campStatusBox .rainContainer .rain2 {
+  position: absolute;
+  margin-top: -30px;
+  width: 300px;
+  margin-left: 125px;
+  filter: brightness(5);
+}
+body .campingMask .campStatusBox .clouds {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  width: 700px;
+  animation-name: cloudsAnimations;
+  animation-iteration-count: infinite;
+  animation-duration: 329s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  gap: 70px;
+  z-index: 5;
+  filter: blur(0.5px);
+  transition: all 3s;
+}
+body .campingMask .campStatusBox .clouds .cloudOne {
+  margin-top: -120px;
+  width: 210px;
+  height: 100px;
+  background-image: url(../imagenes/nubedia1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 5s all;
+}
+body .campingMask .campStatusBox .clouds .cloudTwo {
+  margin-top: -30px;
+  width: 240px;
+  height: 100px;
+  background-image: url(../imagenes/nubedia2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 5s all;
+}
+body .campingMask .campStatusBox .clouds .cloudThree {
+  width: 220px;
+  height: 100px;
+  background-image: url(../imagenes/nubedia3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 5s all;
+}
+@keyframes fireglow {
+  0% {
+    transform: scale(1.1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+body .campingMask .campStatusBox .fireglow {
+  position: absolute;
+  animation-name: fireglow;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+  margin-left: 97px;
+  margin-top: 130px;
+  transition: 5s all;
+  z-index: 8;
+}
+body .campingMask .campStatusBox .fireRock {
+  position: absolute;
+  width: 40px;
+  margin-left: 225px;
+  margin-top: 175px;
+  transition: 5s all;
+  z-index: 9;
+}
+body .campingMask .campStatusBox .fireRockNigth {
+  position: absolute;
+  width: 40px;
+  margin-left: 3px;
+  margin-left: 225px;
+  margin-top: 175px;
+  transition: 5s all;
+  z-index: 9;
+}
+body .campingMask .campStatusBox .campFire {
+  position: absolute;
+  width: 55px;
+  margin-top: 110px;
+  margin-left: 220px;
+  transition: 5s all;
+  z-index: 10;
+}
+body .campingMask .campStatusBox img {
+  width: 300px;
+  transition: 5s all;
+}
+body .campingMask .campStatusBox .sunMoon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  z-index: 2;
+  margin-left: 25px;
+  margin-top: 130px;
+  transition: 5s all;
+}
+body .campingMask .campStatusBox .sunMoon .sunMoonImg {
+  width: 350px;
+  transform: rotate(0deg);
+  transition: 8s all;
+}
+body .playerStatusBox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 5px;
+}
+body .playerStatusBox .playerStatus {
+  display: flex;
+  height: 40px;
+  width: 100%;
+}
+body .playerStatusBox .playerStatus .statusBarHealth,
+body .playerStatusBox .playerStatus .statusBarFatigue,
+body .playerStatusBox .playerStatus .statusBarHunger,
+body .playerStatusBox .playerStatus .statusBarThirst,
+body .playerStatusBox .playerStatus .statusBarMood {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  border-radius: 4px;
+  transition: all 5s;
+  overflow: hidden;
+}
+body .playerStatusBox .playerStatus .statusBarHealth p,
+body .playerStatusBox .playerStatus .statusBarFatigue p,
+body .playerStatusBox .playerStatus .statusBarHunger p,
+body .playerStatusBox .playerStatus .statusBarThirst p,
+body .playerStatusBox .playerStatus .statusBarMood p {
+  color: white;
+  font-size: 12pt;
+  font-weight: bolder;
+  margin-left: 10px;
+  letter-spacing: 5px;
+  z-index: 5;
+}
+body .playerStatusBox .playerStatus .statusBarHealthB,
+body .playerStatusBox .playerStatus .statusBarFatigueB,
+body .playerStatusBox .playerStatus .statusBarHungerB,
+body .playerStatusBox .playerStatus .statusBarThirstB,
+body .playerStatusBox .playerStatus .statusBarMoodB {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+body .playerStatusBox .playerStatus .statusBarHealthB p,
+body .playerStatusBox .playerStatus .statusBarFatigueB p,
+body .playerStatusBox .playerStatus .statusBarHungerB p,
+body .playerStatusBox .playerStatus .statusBarThirstB p,
+body .playerStatusBox .playerStatus .statusBarMoodB p {
+  color: #3F4E4F;
+  font-size: 12pt;
+  font-weight: 800;
+  margin-left: 54.5px;
+  margin-top: 10.5px;
+  letter-spacing: 5px;
+  z-index: 4;
+}
+body .playerStatusBox .playerStatus .statusBarHealth {
+  background-color: #B33030;
+  width: 0px;
+}
+body .playerStatusBox .playerStatus .statusBarFatigue {
+  background-color: #3F4E4F;
+  width: 0px;
+}
+body .playerStatusBox .playerStatus .statusBarHunger {
+  background-color: #4E944F;
+  width: 0px;
+}
+body .playerStatusBox .playerStatus .statusBarThirst {
+  background-color: #4B778D;
+  width: 0px;
+}
+body .playerStatusBox .playerStatus .statusBarMood {
+  background-color: #ffa322;
+  width: 0px;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+body .playerStatusBox .playerStatus .StatusIcon .StatusIconSalud {
+  transition: all 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body .playerStatusBox .playerStatus .StatusIcon .StatusIconCansancio {
+  transition: all 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body .playerStatusBox .playerStatus .StatusIcon .StatusIconHambre {
+  transition: all 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body .playerStatusBox .playerStatus .StatusIcon .StatusIconSed {
+  transition: all 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body .playerStatusBox .playerStatus .StatusIcon .StatusIconMoral {
+  transition: all 1s;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body .playerStatusBox .playerStatus .StatusIcon img {
+  width: 40px;
+}
+body .backPackBox {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+body .backPackBox .playerBackPack {
+  display: flex;
+  height: 40px;
+  width: 100%;
+}
+body .backPackBox .playerBackPack .backPackContainers {
+  gap: 3px;
+  display: flex;
+  margin-left: 3px;
+}
+body .backPackBox .playerBackPack .backPackContainers .backPackContainer {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  background-color: rgb(220, 220, 220);
+  width: 40px;
+  height: 40px;
+  transition: all 1s;
+}
+body .backPackBox .playerBackPack .backPackContainers .backPackContainer .backPackimg {
+  display: flex;
+  z-index: 5;
+  color: rgba(255, 255, 255, 0);
+}
+body .backPackBox .playerBackPack .backPackContainers .backPackContainer .backPackimg img {
+  width: 40px;
+  border: 1px solid gray;
+  border-radius: 4px;
+}
+body .backPackBox .playerBackPack .backPackIcon img {
+  cursor: pointer;
+  width: 40px;
+  transition: 1s all;
+}
+body .backPackBox .playerBackPack .backPackIcon img:hover {
+  transform: scale(1.1);
+}
+body .actionsBox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body .actionsBox .actionButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  background-color: rgb(237, 237, 237);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+body .actionsBox .actionButton .actionButtonTitle {
+  font-size: 12pt;
+}
+body .actionsBox .actionButton .actionDescription {
+  font-size: 9pt;
+}/*# sourceMappingURL=styles.css.map */
