@@ -344,6 +344,18 @@ function state() {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data);
+
+                    data.sort(function (a, b) {
+                        if (a.Tiempo > b.Tiempo) {
+                          return 1;
+                        }
+                        if (a.Tiempo < b.Tiempo) {
+                          return -1;
+                        }
+                        // a.tiempo es igual a b tiempo
+                        return 0;
+                      });
+
                     let score_1 = data[data.length - 1]
                     let score_2 = data[data.length - 2]
                     let score_3 = data[data.length - 3]
@@ -520,7 +532,7 @@ function clock() {
 // que va girando 15 grados según pasa la hora
 
 function sunMoon() {
-    let hourDivition = horasTotales * 15;
+    let hourDivition = (horasTotales + 12) * 15;
     let hourV = -(hourDivition) + 180;
     document.querySelector(".sunMoonImg").style.transform = 'rotate(' + hourV + 'deg)'
 }
